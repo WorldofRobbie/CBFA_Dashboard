@@ -1,64 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        /* Styling for the collapsible button */
-        .collapsible {
-            background-color: #007b89;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            font-family: Helvetica, sans-serif;
-            font-weight: bold;
-            justify-content: space-between;
-        }
+<style>
+    /* Styling for the collapsible button */
+    .collapsible {
+        background-color: #007b89;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        justify-content: space-between;
+    }
 
-        .active, .collapsible:hover {
-            background-color: #005963;
-        }
+    .active, .collapsible:hover {
+        background-color: #005963;
+    }
 
-        /* Styling for the collapsible content */
-        .content {
-            padding: 10px;
-            display: none;
-            overflow: hidden;
-            background-color: #007b89;
-            border-radius: 8px;
-            font-family: Helvetica, sans-serif;
-        }
+    /* Styling for the collapsible content */
+    .content {
+        padding: 10px;
+        display: none;
+        overflow: visible; /* Adjusted from hidden to visible */
+        background-color: #007b89;
+        border-radius: 8px;
+        font-family: Helvetica, sans-serif;
+    }
 
-        /* Styling for icons and text */
-        .icon-text-container {
-            align-items: center;
-            display: flex;
-            margin-bottom: 5px;
-            color: white;
-            font-size: 12px;
-        }
-
-        .icon-text-container svg {
-            fill: white; /* Ensure icons are filled white */
-            height: 20px;
-            margin-right: 5px;
-            width: 20px;
-        }
-
-        /* SVG styling for the chevron icons */
-        .collapsible svg {
-            fill: white;
-            height: 16px;
-            width: 16px;
-            transition: transform 0.3s;
-        }
-    </style>
+    /* SVG styling for the chevron icons */
+    .collapsible svg {
+        fill: white;
+        height: 16px;
+        width: 16px;
+        transition: transform 0.3s;
+    }
+</style>
 </head>
 <body>
 
@@ -108,6 +92,7 @@
                 icon.innerHTML = '<path d="M8 11.207l-4-4V5.793l4 4 4-4v1.414z"></path><path fill="none" d="M0 0h16v16H0z"></path>';
             } else {
                 content.style.display = "block";
+                content.style.height = "auto"; // Add to dynamically adjust height
                 icon.innerHTML = '<path d="M8 6.207l-4 4V8.793l4-4 4 4v1.414z"></path><path fill="none" d="M0 0h16v16H0z"></path>';
             }
         });
